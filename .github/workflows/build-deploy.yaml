@@ -35,52 +35,52 @@ jobs:
         uses: actions/checkout@v2
       - name: Set Container Tag Normal
         run: |
-          container="$/$/$:$"
+          container="${{ env.registry }}/${{ env.username}}/${{ env.repository }}:${{ matrix.dockerfile[1] }}"
           echo "container=${container}" >> $GITHUB_ENV
         # On a new release create a container with the same tag as the release.
       - name: Set Container Tag Release
         if: github.event_name == 'release'
         run: |
-          versioned="$/$/$:${GITHUB_REF##*/}"
+          versioned="${{ env.registry }}/${{ env.username}}/${{ env.repository }}:${GITHUB_REF##*/}"
           echo "versioned=${versioned}" >> $GITHUB_ENV
         # On a PR create a "test" container with the same tag as the branch name.
       - name: Set Branch Tag Release
         if: github.event_name == 'pull_request'
         run: |
-          versioned="$/$/$:${GITHUB_HEAD_REF}"
+          versioned="${{ env.registry }}/${{ env.username}}/${{ env.repository }}:${GITHUB_HEAD_REF}"
           echo "versioned=${versioned}" >> $GITHUB_ENV
-      - name: Build $
+      - name: Build ${{ matrix.dockerfile[1] }}
         run: |
-          printf "Preparing to build $ from $"
-          if [ ! -f "$" ]; then
-              printf "Dockerfile $ does not exist"
+          printf "Preparing to build ${{ env.container }} from ${{ matrix.dockerfile[0] }}"
+          if [ ! -f "${{ matrix.dockerfile[0]}}" ]; then
+              printf "Dockerfile ${{ matrix.dockerfile[0] }} does not exist"
               exit 1;
           fi
-          docker build -f $ -t $ .
+          docker build -f ${{ matrix.dockerfile[0] }} -t ${{ env.container }} .
           docker images
-      - name: Test $
+      - name: Test ${{ matrix.dockerfile[1] }}
         run: |
-          printf "Testing $"
-          docker run --rm -v "${PWD}/test":/tmp $ my_address_file_geocoded.csv
+          printf "Testing ${{ env.container }}"
+          docker run --rm -v "${PWD}/test":/tmp ${{ env.container }} my_address_file_geocoded.csv
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v1
         with:
-          registry: $
-          username: $
-          password: $
+          registry: ${{ env.registry }}
+          username: ${{ env.username }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           # Example variables for a non GitHub registry like Quay or Docker Hub
           # username: $
           # password: $
      # Deploy branch container on pull request
-      - name: Test Deploy $
+      - name: Test Deploy ${{ env.versioned }}
         if: github.event_name == 'pull_request'
         run: |
-          docker tag $ $
-          docker push $
+          docker tag ${{ env.container }} ${{ env.versioned }}
+          docker push ${{ env.versioned }}
     # Deploy release container on release
-      - name: Deploy $
+      - name: Deploy ${{ env.versioned }}
         if: github.event_name == 'release'
         run: |
-          docker tag $ $
-          docker push $
-          docker push $
+          docker tag ${{ env.container }} ${{ env.versioned }}
+          docker push ${{ env.versioned }}
+          docker push ${{ env.container }}
