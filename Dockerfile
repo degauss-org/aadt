@@ -11,13 +11,15 @@ RUN apt-get update \
   libgeos-dev \
   libudunits2-dev \
   libproj-dev \
+  curl \
   && apt-get clean
 
 COPY renv.lock .
 
+RUN R --quiet -e "Sys.setenv(RENV_DOWNLOAD_METHOD = 'curl')"
+RUN R --quiet -e "options(renv.config.connect.timeout = 300)"
 RUN R --quiet -e "renv::restore(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/__linux__/focal/latest'))"
 
-COPY s3_downloads/ .
 COPY entrypoint.R .
 
 WORKDIR /tmp

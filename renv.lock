@@ -68,8 +68,8 @@
       "RemoteRepo": "addAadtData",
       "RemoteUsername": "geomarker-io",
       "RemoteRef": "HEAD",
-      "RemoteSha": "417e97e597d79d2270ae586022785c0a8d6c0392",
-      "Hash": "89b9628aabb9ef38858855786cef7f80"
+      "RemoteSha": "2aa97136e7c910b67aee091b422cf0ae2a1f16ef",
+      "Hash": "26d902b28e99a89fc9eb7828f6d91e8c"
     },
     "askpass": {
       "Package": "askpass",
@@ -171,15 +171,15 @@
     },
     "dht": {
       "Package": "dht",
-      "Version": "0.1.3",
+      "Version": "0.1.6",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "dht",
       "RemoteUsername": "degauss-org",
       "RemoteRef": "HEAD",
-      "RemoteSha": "69bdb8c381e9511f6e6158a510787c9d38c93462",
-      "Hash": "19b722e71b6b903a73bd35efd8587afc"
+      "RemoteSha": "3f9b527c6c4a605e381970762344a65dc9d85b88",
+      "Hash": "7230050ba98a1291891fb56c908f4ac0"
     },
     "digest": {
       "Package": "digest",
@@ -239,10 +239,10 @@
     },
     "gert": {
       "Package": "gert",
-      "Version": "1.4.1",
+      "Version": "1.4.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "8e54ffecc152da9e1e366ff1a4012bb1"
+      "Hash": "3a3f29a74f8bd85ed8d53ab039b18bcd"
     },
     "gh": {
       "Package": "gh",
@@ -379,10 +379,10 @@
     },
     "readr": {
       "Package": "readr",
-      "Version": "2.0.2",
+      "Version": "2.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "7cb2c3ecfbc2c6786221d2c0c1f6ed68"
+      "Hash": "6c825746f32a68f4d8c40f94da5b1ac5"
     },
     "renv": {
       "Package": "renv",
@@ -433,10 +433,10 @@
     },
     "sf": {
       "Package": "sf",
-      "Version": "1.0-3",
+      "Version": "1.0-4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "efcdd149b21e8948ce31d6d5b7a36729"
+      "Hash": "05ff2d3c63d954272f44deff24952879"
     },
     "stringfish": {
       "Package": "stringfish",
@@ -524,10 +524,10 @@
     },
     "vroom": {
       "Package": "vroom",
-      "Version": "1.5.5",
+      "Version": "1.5.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "9c3b3a3f947c7936cea7485349247e5b"
+      "Hash": "0af818392e60673cd8968ab9119c30a7"
     },
     "whisker": {
       "Package": "whisker",

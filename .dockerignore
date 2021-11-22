@@ -4,4 +4,3 @@
 # except what we need
 !/renv.lock
 !/entrypoint.R
-!/s3_downloads

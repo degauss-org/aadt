@@ -23,7 +23,7 @@ if (is.null(opt$buffer_radius)) {
 
 raw_data <- readr::read_csv(opt$filename)
 
-d <- addAadtData::add_aadt(raw_data, download_folder = fs::path('../app'))
+d <- addAadtData::add_aadt(raw_data)
 
 dht::write_geomarker_file(d = d,
                      filename = opt$filename,
