@@ -60,7 +60,7 @@
     },
     "addAadtData": {
       "Package": "addAadtData",
-      "Version": "0.0.1",
+      "Version": "0.0.2",
       "Source": "GitHub",
       "Remotes": "degauss-org/dht, geomarker-io/s3",
       "RemoteType": "github",
@@ -68,8 +68,8 @@
       "RemoteRepo": "addAadtData",
       "RemoteUsername": "geomarker-io",
       "RemoteRef": "HEAD",
-      "RemoteSha": "2aa97136e7c910b67aee091b422cf0ae2a1f16ef",
-      "Hash": "26d902b28e99a89fc9eb7828f6d91e8c"
+      "RemoteSha": "fad33abe4c2197c66287657b1999c711be2043d2",
+      "Hash": "2bbad2e2c724ad53fd6111dbb8bc4d1a"
     },
     "askpass": {
       "Package": "askpass",
@@ -136,10 +136,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.4.1",
+      "Version": "0.4.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "70976176dfd7f179f212783aab2547b1"
+      "Hash": "fa53ce256cd280f468c080a58ea5ba8c"
     },
     "crayon": {
       "Package": "crayon",
@@ -150,10 +150,10 @@
     },
     "credentials": {
       "Package": "credentials",
-      "Version": "1.3.1",
+      "Version": "1.3.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "db9463f8f96444ac790bef2076048699"
+      "Hash": "93762d0a34d78e6a025efdbfb5c6bb41"
     },
     "curl": {
       "Package": "curl",
@@ -171,15 +171,15 @@
     },
     "dht": {
       "Package": "dht",
-      "Version": "0.1.6",
+      "Version": "0.2.0",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteRepo": "dht",
       "RemoteUsername": "degauss-org",
       "RemoteRef": "HEAD",
-      "RemoteSha": "3f9b527c6c4a605e381970762344a65dc9d85b88",
-      "Hash": "7230050ba98a1291891fb56c908f4ac0"
+      "RemoteSha": "0ffa96429310e46805e5cd8dc900f9e8dce2fda6",
+      "Hash": "89b2a40a3f9fee3c0ec088d823eaca81"
     },
     "digest": {
       "Package": "digest",
@@ -356,6 +356,13 @@
       "Repository": "CRAN",
       "Hash": "50b405c6419e921b9e9360cc9ebbcf2d"
     },
+    "ps": {
+      "Package": "ps",
+      "Version": "1.6.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "32620e2001c1dce1af49c49dccbb9420"
+    },
     "purrr": {
       "Package": "purrr",
       "Version": "0.3.4",
@@ -447,10 +454,10 @@
     },
     "stringi": {
       "Package": "stringi",
-      "Version": "1.7.5",
+      "Version": "1.7.6",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "cd50dc9b449de3d3b47cdc9976886999"
+      "Hash": "bba431031d30789535745a9627ac9271"
     },
     "stringr": {
       "Package": "stringr",
@@ -538,10 +545,10 @@
     },
     "withr": {
       "Package": "withr",
-      "Version": "2.4.2",
+      "Version": "2.4.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "ad03909b44677f930fa156d47d7a3aeb"
+      "Hash": "a376b424c4817cda4920bbbeb3364e85"
     },
     "wk": {
       "Package": "wk",
