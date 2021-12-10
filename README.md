@@ -10,13 +10,13 @@
 If `my_address_file_geocoded.csv` is a file in the current working directory with coordinate columns named `lat` and `lon`, then
 
 ```sh
-docker run --rm -v $PWD:/tmp /degauss/aadt:0.1.1 my_address_file_geocoded.csv
+docker run --rm -v $PWD:/tmp degauss/aadt:0.1.1 my_address_file_geocoded.csv
 ```
 
 will produce `my_address_file_geocoded_aadt_v0.1.1_400m_buffer.csv` with an added columns `length_moving`,`length_stop_go`, `vehicle_meters_moving`, `vehicle_meters_stop_go`, `truck_meters_moving`, and `truck_meters_stop_go` which describe the AADT within a 400 m radius. To change the buffer radius, supply it (in meters) as an argument in your docker call: 
 
 ```sh
-docker run --rm -v $PWD:/tmp /degauss/aadt:0.1.1 my_address_file_geocoded.csv 500
+docker run --rm -v $PWD:/tmp degauss/aadt:0.1.1 my_address_file_geocoded.csv 500
 ```
 
 ## geomarker methods
