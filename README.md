@@ -2,7 +2,6 @@
 
 > get average annual daily traffic (AADT) within a buffer radius of geocoded address
 
-[![Docker Build Status](https://img.shields.io/docker/automated/degauss/aadt)](https://hub.docker.com/repository/docker/degauss/aadt/tags)
 [![GitHub Latest Tag](https://img.shields.io/github/v/tag/degauss-org/aadt)](https://github.com/degauss-org/aadt/releases)
 
 ## DeGAUSS example call
