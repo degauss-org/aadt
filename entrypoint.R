@@ -1,10 +1,11 @@
 #!/usr/local/bin/Rscript
 
-dht::greeting(geomarker_name = "aadt", version = "0.1.1", description = "returns average annual daily traffic within a buffer radius of geocoded address")
+dht::greeting()
 
-dht::qlibrary(dplyr)
-dht::qlibrary(tidyr)
-dht::qlibrary(sf)
+## load libraries without messages or warnings
+withr::with_message_sink("/dev/null", library(dplyr))
+withr::with_message_sink("/dev/null", library(tidyr))
+withr::with_message_sink("/dev/null", library(sf))
 
 doc <- "
       Usage:
@@ -21,11 +22,12 @@ if (is.null(opt$buffer_radius)) {
 ## opt <- docopt::docopt(doc, args = 'test/my_address_file_geocoded.csv')
 ## opt <- docopt::docopt(doc, args = 'my_address_file_geocoded.csv')
 
-raw_data <- readr::read_csv(opt$filename)
+message("reading input file...")
+d <- dht::read_lat_lon_csv(opt$filename)
 
-d <- addAadtData::add_aadt(raw_data)
+## add code here to calculate geomarkers
+d <- addAadtData::add_aadt(d)
 
 dht::write_geomarker_file(d = d,
                      filename = opt$filename,
-                     geomarker_name = "aadt",
-                     version = glue::glue("0.1.1_{opt$buffer_radius}m_buffer"))
+                     argument = glue::glue('{opt$buffer_radius}m_buffer'))
