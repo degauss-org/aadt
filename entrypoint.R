@@ -16,6 +16,8 @@ opt <- docopt::docopt(doc)
 
 if (is.null(opt$buffer_radius)) {
   opt$buffer_radius <- 400
+} else {
+  opt$buffer_radius <- as.numeric(opt$buffer_radius)
 }
 
 ## for interactive testing
@@ -26,7 +28,7 @@ message("reading input file...")
 d <- dht::read_lat_lon_csv(opt$filename)
 
 ## add code here to calculate geomarkers
-d <- addAadtData::add_aadt(d)
+d <- addAadtData::add_aadt(d, opt$buffer_radius)
 
 dht::write_geomarker_file(d = d,
                      filename = opt$filename,
