@@ -25,7 +25,8 @@ if (is.null(opt$buffer_radius)) {
 ## opt <- docopt::docopt(doc, args = 'my_address_file_geocoded.csv')
 
 message("reading input file...")
-d <- dht::read_lat_lon_csv(opt$filename)
+d <- dht::read_lat_lon_csv(opt$filename) |>
+  select(-.row)
 
 ## add code here to calculate geomarkers
 d <- addAadtData::add_aadt(d, opt$buffer_radius)

@@ -2,7 +2,7 @@ FROM rocker/r-ver:4.0.5
 
 # DeGAUSS container metadata
 ENV degauss_name="aadt"
-ENV degauss_version="0.2.1"
+ENV degauss_version="0.2.2"
 ENV degauss_description="average annual daily traffic"
 ENV degauss_argument="buffer radius in meters [default: 400]"
 
